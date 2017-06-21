@@ -17,7 +17,7 @@ This software is distributed under the [GPL 3.0](http://www.gnu.org/licenses/gpl
 
 ## Installation and Setup
 
-The code in this repo needs to be deployed to a web server. Make sure user write permiussion for `/var/` and subfolders are set.
+The code in this repo needs to be deployed to a web server. Make sure user write permissions for `/var/` and subfolders are set.
 
 The subfolder `/etc/` contains a sample config file called `/etc/config.xml`. Settings can be made there, although it is recommended to make a copy called `/etc/config.local.xml` in the same folder and make settings there.
 
