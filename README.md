@@ -1,15 +1,15 @@
 # pfsense-backup
 
-Ziel dieses kleinen PHP-Projektes ist, ein automatisiertes Backup der pfSense-Konfiguration zu ermöglichen.
+The goal of this little PHP project is to gain automated config backups from a pfsense box.
 
 ## Features
 
-- Einfache Konfiguration über eine XML-Datei
-- Backups können wahlweise per E-Mail versendet oder in einem Ordner gespeichert werden
+- Simple configuration via XML file
+- Backups can be saved locally or may be sent to one or more e-mail-recipients
 
 ## Requirements
 - min. PHP 5.5 with cURL
-- Irgendein Cronjob-Runner
+- some server running cron jobs
 
 ## License
 
@@ -17,22 +17,22 @@ This software is distributed under the [GPL 3.0](http://www.gnu.org/licenses/gpl
 
 ## Installation and Setup
 
-Zunächst muss der Code aus diesem Repository auf einem Webserver deployed werden. Bitte achten Sie darauf, dass alle Unterordner von `/var/` vom Webserver-User beschrieben werden können.
+The code in this repo needs to be deployed to a web server. Make sure user write permiussion for `/var/` and subfolders are set.
 
-Im Unterordner `/etc/` befindet sich eine Bespiel-Konfigurationsdatei namens `/etc/config.xml`. Einstellungen können darin vorgenommen werden. Es wird jedoch empfohlen, eine Kopie dieser Datei im gleichen Ordner mit dem Namen `/etc/config.local.xml` zu erstellen und die Einstellungen dort vorzunehmen.
+The subfolder `/etc/` contains a sample config file called `/etc/config.xml`. Settings can be made there, although it is recommended to make a copy called `/etc/config.local.xml` in the same folder and make settings there.
 
-Nach erfolgreicher Konfiguration kann das Script durch folgenden URL-Aufruf gestartet werden:
+With options in the config-file set, the script can be run by visiting this URL:
 `https://localhost/pfsense-backup/cron.php`
 
-Gemeldetete Fehler sind in der Regel auf mangelnde Dateiberechtigungen oder falsche Konfiguration zurückzuführen.
+Errors are usually either permission- or config related.
 
-Für die regelmäßige Ausführung empfiehlt sich bspw. das Crontab-Modul eines Unix-Servers. Eine beispielhafte Konfiguration auf einem Linux-Server:
+For regular runs using the crontab-module of a Unix server is recommended. Sample config for a Linux server:
 
-Bearbeiten der Cronjobs starten: `sudo crontab -e`
+`sudo crontab -e`
 
 `0 3 * * * wget -q --spider https://localhost/pfsense-backup/cron.php`
 
-Das Script wird nun täglich um 3:00 Uhr ausgeführt.
+The script will then be run every day at 3AM
 
 ## Configuration
 
