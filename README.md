@@ -77,7 +77,8 @@ Main script behavior configuration:
 </backup>
 ```
 
-Die Outbox-Konfiguration ist nicht zwingend notwendig. Über dieses Postfach werden sowohl die Backups (sofern E-Mail-Versand gewünscht) als auch Log-Nachrichten versendet.
+Outbox-configuration is optional. The credentials entered here will be used to send the actual backups as well as log files.
+
 ```xml
 <outbox>
     <sender_address>pfsense-backup@example.com</sender_address>
