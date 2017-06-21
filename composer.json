@@ -1,0 +1,21 @@
+{
+  "name": "bannerstop/pfsense-backup",
+  "license": "GPL-3.0",
+  "version": "1.0.0",
+  "type": "project",
+  "homepage": "https://github.com/bannerstop/pfsense-backup",
+  "time": "2017-06-21",
+  "authors": [
+    {
+      "name": "Marius Lüxmann",
+      "email": "luexmann@bannerstop.com",
+      "homepage": "https://www.bannerstop.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "zendframework/zend-config": "3.1.0",
+    "phpmailer/phpmailer": "v5.2.23",
+    "sunra/php-simple-html-dom-parser": "v1.5.2"
+  }
+}
